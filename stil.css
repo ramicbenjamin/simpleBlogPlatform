@@ -1,0 +1,330 @@
+/*stilovi za pocetnu stranicu*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    margin: 0 auto;
+    min-width: 500px;
+    max-width: 1300px;
+    background: white;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.red {
+    padding: 10px;
+    width: 100%;
+    float: left;
+    min-height: 1px;
+}
+
+.kolona {
+    background: white;
+    margin-left: 2%;
+    margin-right: 2%;
+    display: inline-block;
+    /*Omogućava da se kolone prikažu bez da se float mora clearovati poslije*/
+    float: left;
+    min-height: 20px;
+}
+
+.kolona:first-child {
+    margin-left: 0px;
+}
+
+.kolona:last-child {
+    margin-right: 0px;
+}
+
+.kolona.cetri {
+    width: 100%;
+}
+
+.kolona.tri {
+    width: 74%;
+}
+
+.kolona.dva {
+    width: 48%;
+}
+
+.kolona.dva.clanak {
+    height: 100%;
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    overflow: hidden;
+}
+
+.kolona.jedan {
+    width: 22%;
+}
+
+.kolona.dva.meni {
+    text-align: right;
+    font-family: Roboto Thin;
+    font-size: 20px;
+}
+
+.kolona.dva.logo {
+    text-align: left;
+    font-family: Roboto Thin;
+    font-size: 24px;
+}
+
+.naslov {
+    text-align: center;
+    font-family: Roboto Thin;
+    font-size: 35px;
+    background-color: #1d6dc7;
+    margin: auto 0;
+}
+
+.kolona.jedan.clanak {
+    height: 100%;
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    overflow: hidden;
+}
+
+.red.clanci {
+    height: 250px;
+}
+
+.clanak.skracen.slika.velika {
+    width: 90%;
+    height: 50%;
+    margin: auto;
+    margin-top: 15px;
+    background-color: #f8e3e3;
+    text-align: center;
+    font-family: Roboto Thin;
+    background-image: url('http://1030news.com/wp-content/themes/fearless/images/missing-image-640x360.png');
+    width: 350px;
+    height: 140px;
+    background-position: center;
+    /*  Make the background image cover the area of the <div>, and clip the excess */
+    background-size: cover;
+}
+
+.clanak.skracen.slika.mala {
+    width: 90%;
+    height: 50%;
+    margin: auto;
+    margin-top: 15px;
+    background-color: #f8e3e3;
+    text-align: center;
+    font-family: Roboto Thin;
+    background-image: url('http://1030news.com/wp-content/themes/fearless/images/missing-image-640x360.png');
+    width: 180px;
+    height: 100px;
+    background-position: center;
+    /*  Make the background image cover the area of the <div>, and clip the excess */
+    background-size: cover;
+}
+
+.clanak.skracen.tekst {
+    text-align: justify;
+    padding-top: 10px;
+    margin: auto 20px;
+    font-family: Roboto Black;
+    text-align: center;
+    overflow: hidden;
+    font-size: 24px;
+}
+
+.clanak.skracen.detaljno {
+    text-align: center;
+    font-family: Roboto;
+    font-size: 12px;
+    color: blue;
+    overflow: hidden;
+}
+
+.img.clanak {
+    max-height: 100%;
+    width: 100%;
+    height: auto;
+}
+
+a:link
+{
+    color: #1b1b1b;
+    text-decoration: none;
+}
+
+a:visited
+{
+    color: #1b1b1b;
+}
+
+a:hover {
+    color: skyblue;
+}
+
+a:active {
+    color: blue;
+}
+
+a
+{
+    font-family: Roboto Thin;
+}
+/*skrati ekran*/
+
+@media screen and (max-width: 600px) {
+    .sakrij {
+        display: none;
+    }
+}
+
+/*LOGIN STAJLOVI*/
+.formaLogIn {
+    border: 3px solid #f1f1f1;
+}
+
+input[type=username], input[type=password], input[type=NazivPosta], input[type=email]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px auto;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-family: Roboto Thin;
+}
+    
+.dugmeLogIn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+.containerLogIn {
+    padding: 16px;
+}
+
+/*Novi post stajlovi*/
+of
+{
+    font-family: Roboto Thin;
+}
+
+input[type=textPosta] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px auto;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-family: Roboto Thin;
+    height: 200px;
+}
+
+/*registracijaStilovi*/
+.containerRegistracija{
+    padding: 16px;
+}
+
+/*profilStilovi*/
+.profilFotka
+{
+    max-height: 100%;
+    width: 100%;
+    height: auto;
+}
+.placeHolderProfilFotke
+{
+    width: 90%;
+    height: 50%;
+    margin: auto;
+    margin-top: 15px;
+    background-color: #f8e3e3;
+    text-align: center;
+    font-family: Roboto Thin;
+    background-image: url('http://1030news.com/wp-content/themes/fearless/images/missing-image-640x360.png');
+    width: 200px;
+    height: 200px;
+    background-position: center;
+    /*  Make the background image cover the area of the <div>, and clip the excess */
+    background-size: cover;
+}
+.okvirInformacije
+{
+    height: 100%;
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+.kolona.dva.opis
+{
+    text-align: right;
+    font-family: Roboto;
+    font-size: 32px;
+}
+.kolona.dva.atributi
+{
+    text-align: left;
+    font-family: Roboto Thin;
+    font-size: 32px;
+}
+
+/*notifikacijeStilovi*/
+.notifikacija
+{
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    text-align: center;
+    font-family: Roboto Thin;
+    font-size: 28px;
+    margin: 0 auto;
+    width: 70%;
+}
+/*clanakStilovi*/
+.placeHolderClanakFotke
+{
+    width: 90%;
+    height: 50%;
+    margin: auto;
+    margin-top: 15px;
+    background-color: #f8e3e3;
+    text-align: center;
+    font-family: Roboto Thin;
+    background-image: url('http://1030news.com/wp-content/themes/fearless/images/missing-image-640x360.png');
+    width: 600px;
+    height: 300px;
+    background-position: center;
+    /*  Make the background image cover the area of the <div>, and clip the excess */
+    background-size: cover;
+}
+.naslovClanak
+{
+    text-align: center;
+    font-family: Roboto;
+    font-size: 35px;
+    margin: auto 0;
+}
+.placeHolderTekstClanka
+{
+    width: 90%;
+    height: 50%;
+    margin: auto;
+    margin-top: 15px;
+    text-align: justify;
+    font-family: Roboto Thin;
+    width: 600px;
+    height: 300px;
+    background-position: center;
+}
