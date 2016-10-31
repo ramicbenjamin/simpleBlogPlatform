@@ -68,19 +68,22 @@ body {
 
 .kolona.dva.meni {
     text-align: right;
-    font-family: Roboto Thin;
+    font-family: Roboto;
+    font-weight: lighter;
     font-size: 20px;
 }
 
 .kolona.dva.logo {
     text-align: left;
-    font-family: Roboto Thin;
+    font-family: Roboto;
+    font-weight: lighter;
     font-size: 24px;
 }
 
 .naslov {
     text-align: center;
-    font-family: Roboto Thin;
+    font-family: Roboto;
+    font-weight: lighter;
     font-size: 35px;
     background-color: #1d6dc7;
     margin: auto 0;
@@ -105,7 +108,8 @@ body {
     margin-top: 15px;
     background-color: #f8e3e3;
     text-align: center;
-    font-family: Roboto Thin;
+    font-family: Roboto;
+    font-weight: lighter;
     background-image: url('http://1030news.com/wp-content/themes/fearless/images/missing-image-640x360.png');
     width: 350px;
     height: 140px;
@@ -121,7 +125,8 @@ body {
     margin-top: 15px;
     background-color: #f8e3e3;
     text-align: center;
-    font-family: Roboto Thin;
+    font-family: Roboto;
+    font-weight: lighter;
     background-image: url('http://1030news.com/wp-content/themes/fearless/images/missing-image-640x360.png');
     width: 180px;
     height: 100px;
@@ -134,7 +139,8 @@ body {
     text-align: justify;
     padding-top: 10px;
     margin: auto 20px;
-    font-family: Roboto Black;
+    font-family: Roboto;
+    font-weight: bold;
     text-align: center;
     overflow: hidden;
     font-size: 24px;
@@ -175,7 +181,8 @@ a:active {
 
 a
 {
-    font-family: Roboto Thin;
+    font-family: Roboto;
+    font-weight: lighter;
 }
 /*skrati ekran*/
 
@@ -197,7 +204,8 @@ input[type=username], input[type=password], input[type=NazivPosta], input[type=e
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
-    font-family: Roboto Thin;
+    font-family: Roboto;
+    font-weight: lighter;
 }
     
 .dugmeLogIn {
@@ -218,7 +226,8 @@ input[type=username], input[type=password], input[type=NazivPosta], input[type=e
 /*Novi post stajlovi*/
 of
 {
-    font-family: Roboto Thin;
+    font-family: Roboto;
+    font-weight: lighter;
 }
 
 input[type=textPosta] {
@@ -228,7 +237,8 @@ input[type=textPosta] {
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
-    font-family: Roboto Thin;
+    font-family: Roboto;
+    font-weight: lighter;
     height: 200px;
 }
 
@@ -252,7 +262,8 @@ input[type=textPosta] {
     margin-top: 15px;
     background-color: #f8e3e3;
     text-align: center;
-    font-family: Roboto Thin;
+    font-family: Roboto;
+    font-weight: lighter;
     background-image: url('http://1030news.com/wp-content/themes/fearless/images/missing-image-640x360.png');
     width: 200px;
     height: 200px;
@@ -276,7 +287,8 @@ input[type=textPosta] {
 .kolona.dva.atributi
 {
     text-align: left;
-    font-family: Roboto Thin;
+    font-family: Roboto;
+    font-weight: lighter;
     font-size: 32px;
 }
 
@@ -287,7 +299,8 @@ input[type=textPosta] {
     border-style: solid;
     border-color: black;
     text-align: center;
-    font-family: Roboto Thin;
+    font-family: Roboto;
+    font-weight: lighter;
     font-size: 28px;
     margin: 0 auto;
     width: 70%;
@@ -301,7 +314,8 @@ input[type=textPosta] {
     margin-top: 15px;
     background-color: #f8e3e3;
     text-align: center;
-    font-family: Roboto Thin;
+    font-family: Roboto;
+    font-weight: lighter;
     background-image: url('http://1030news.com/wp-content/themes/fearless/images/missing-image-640x360.png');
     width: 600px;
     height: 300px;
@@ -323,7 +337,8 @@ input[type=textPosta] {
     margin: auto;
     margin-top: 15px;
     text-align: justify;
-    font-family: Roboto Thin;
+    font-family: Roboto;
+    font-weight: lighter;
     width: 600px;
     height: 300px;
     background-position: center;
