@@ -70,7 +70,7 @@ body {
     text-align: right;
     font-family: Roboto;
     font-weight: lighter;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .kolona.dva.logo {
@@ -212,10 +212,44 @@ subLinks
     font-family: Roboto;
 }
 /*skrati ekran*/
+.prikazi
+{
+    display: none;
+    text-align: center;
+}
 
+@media screen and (max-width: 1000px)
+{
+    .kolona.dva.meni {
+    text-align: right;
+    font-family: Roboto;
+    font-weight: lighter;
+    font-size: 15px;
+}
+}
+    
+@media screen and (max-width: 800px)
+{
+    .sakrij.meni
+    {
+        display: none;
+    }
+    .prikazi
+    {
+        display: block;
+    }
+}
 @media screen and (max-width: 600px) {
     .sakrij {
         display: none;
+    }
+    .sakrij.meni
+    {
+        display: none;
+    }
+    .prikazi
+    {
+        display: block;
     }
 }
 
@@ -224,7 +258,7 @@ subLinks
     border: 3px solid #f1f1f1;
 }
 
-input[type=username], input[type=password], input[type=NazivPosta], input[type=email]{
+input[type=text], input[type=password], input[type=email]{
     width: 100%;
     padding: 12px 20px;
     margin: 8px auto;
@@ -311,6 +345,12 @@ input[type=textPosta] {
     font-family: Roboto;
     font-size: 32px;
 }
+
+.marginTop4
+{
+    margin-top: 4px;
+}
+
 .kolona.dva.atributi
 {
     text-align: left;
