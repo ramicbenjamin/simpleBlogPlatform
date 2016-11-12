@@ -24,6 +24,10 @@ body {
     min-height: 1px;
 }
 
+.clear {
+    clear: both;
+}
+
 .kolona {
     background: white;
     margin-left: 2%;
@@ -162,14 +166,12 @@ body {
     height: auto;
 }
 
-a:link
-{
+a:link {
     color: #1b1b1b;
     text-decoration: none;
 }
 
-a:visited
-{
+a:visited {
     color: #1b1b1b;
 }
 
@@ -181,21 +183,17 @@ a:active {
     color: blue;
 }
 
-a
-{
+a {
     font-family: Roboto;
     font-weight: lighter;
 }
 
-
-subLinks:link
-{
+subLinks:link {
     color: #1b1b1b;
     text-decoration: none;
 }
 
-subLinks:visited
-{
+subLinks:visited {
     color: #1b1b1b;
 }
 
@@ -207,58 +205,58 @@ subLinks:active {
     color: blue;
 }
 
-subLinks
-{
+subLinks {
     font-family: Roboto;
 }
+
+
 /*skrati ekran*/
-.prikazi
-{
+
+.prikazi {
     display: none;
     text-align: center;
 }
 
-@media screen and (max-width: 1000px)
-{
+@media screen and (max-width: 1000px) {
     .kolona.dva.meni {
-    text-align: right;
-    font-family: Roboto;
-    font-weight: lighter;
-    font-size: 15px;
+        text-align: right;
+        font-family: Roboto;
+        font-weight: lighter;
+        font-size: 15px;
+    }
 }
-}
-    
-@media screen and (max-width: 800px)
-{
-    .sakrij.meni
-    {
+
+@media screen and (max-width: 800px) {
+    .sakrij.meni {
         display: none;
     }
-    .prikazi
-    {
+    .prikazi {
         display: block;
     }
 }
+
 @media screen and (max-width: 600px) {
     .sakrij {
         display: none;
     }
-    .sakrij.meni
-    {
+    .sakrij.meni {
         display: none;
     }
-    .prikazi
-    {
+    .prikazi {
         display: block;
     }
 }
 
+
 /*LOGIN STAJLOVI*/
+
 .formaLogIn {
     border: 3px solid #f1f1f1;
 }
 
-input[type=text], input[type=password], input[type=email]{
+input[type=text],
+input[type=password],
+input[type=email] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px auto;
@@ -268,7 +266,7 @@ input[type=text], input[type=password], input[type=email]{
     font-family: Roboto;
     font-weight: lighter;
 }
-    
+
 .dugmeLogIn {
     background-color: #4CAF50;
     color: white;
@@ -279,14 +277,14 @@ input[type=text], input[type=password], input[type=email]{
     width: 100%;
 }
 
-
 .containerLogIn {
     padding: 16px;
 }
 
+
 /*Novi post stajlovi*/
-of
-{
+
+of {
     font-family: Roboto;
     font-weight: lighter;
 }
@@ -303,20 +301,23 @@ input[type=textPosta] {
     height: 200px;
 }
 
+
 /*registracijaStilovi*/
-.containerRegistracija{
+
+.containerRegistracija {
     padding: 16px;
 }
 
+
 /*profilStilovi*/
-.profilFotka
-{
+
+.profilFotka {
     max-height: 100%;
     width: 100%;
     height: auto;
 }
-.placeHolderProfilFotke
-{
+
+.placeHolderProfilFotke {
     width: 90%;
     height: 50%;
     margin: auto;
@@ -332,36 +333,35 @@ input[type=textPosta] {
     /*  Make the background image cover the area of the <div>, and clip the excess */
     background-size: cover;
 }
-.okvirInformacije
-{
+
+.okvirInformacije {
     height: 100%;
     width: 90%;
     margin: auto;
     overflow: hidden;
 }
-.kolona.dva.opis
-{
+
+.kolona.dva.opis {
     text-align: right;
     font-family: Roboto;
     font-size: 32px;
 }
 
-.marginTop4
-{
+.marginTop4 {
     margin-top: 4px;
 }
 
-.kolona.dva.atributi
-{
+.kolona.dva.atributi {
     text-align: left;
     font-family: Roboto;
     font-weight: lighter;
     font-size: 32px;
 }
 
+
 /*notifikacijeStilovi*/
-.notifikacija
-{
+
+.notifikacija {
     border: 1px;
     border-style: solid;
     border-color: black;
@@ -372,9 +372,11 @@ input[type=textPosta] {
     margin: 0 auto;
     width: 70%;
 }
+
+
 /*clanakStilovi*/
-.placeHolderClanakFotke
-{
+
+.placeHolderClanakFotke {
     width: 90%;
     height: 50%;
     margin: auto;
@@ -390,23 +392,56 @@ input[type=textPosta] {
     /*  Make the background image cover the area of the <div>, and clip the excess */
     background-size: cover;
 }
-.naslovClanak
-{
+
+.naslovClanak {
     text-align: center;
     font-family: Roboto;
     font-size: 35px;
     margin: auto 0;
 }
-.placeHolderTekstClanka
-{
+
+.placeHolderTekstClanka {
     width: 90%;
-    height: 50%;
     margin: auto;
     margin-top: 15px;
     text-align: justify;
     font-family: Roboto;
     font-weight: lighter;
     width: 600px;
-    height: 300px;
     background-position: center;
+    overflow: hidden;
+}
+
+
+/*galerija*/
+
+.kolona.trecina {
+    width: 29%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.kolona.trecina img {
+    width: 100%;
+    height: auto;
+}
+
+.thumbnail {
+}
+
+.shown {
+    height: auto; 
+    width: auto; 
+    max-width: 100%;
+    padding: 20px 10%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.13);
+}
+.hidden
+{
+     display: none;
 }
