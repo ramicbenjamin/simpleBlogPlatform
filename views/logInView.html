@@ -1,0 +1,13 @@
+<div class="red">
+    <div class="naslov">Prijavi se</div>
+</div>
+<form class="formaLogIn">
+    <div class="containerLogIn">
+        <input type="text" id="unameLogin" placeholder="Unesi korisnicko ime" name="uname" onfocusout="validirajUnameLogina('unameLogin', 'greskaUname')" required>
+        <div class="hidden" id="greskaUname">Username mora sadrzavati iskljucivo slova i brojeve, bez razmaka.</div>
+        <input type="password" id="passLogin" placeholder="Unesi password" name="psw" onfocusout="validirajJedanPass(this.id)" required>
+        <div class="hidden" id="greskaPass">Password mora biti dulji od osam karaktera.</div>
+        <button type="button" id="loginButton" onclick="validirajLogIn()" disabled>LogIn</button>
+    </div>
+    <div class="red"> <a onclick="loadStranica('views/registracijaView.html')">Nemam akaunt</a> </div>
+</form>
