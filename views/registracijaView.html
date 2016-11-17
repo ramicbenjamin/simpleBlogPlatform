@@ -14,7 +14,7 @@
         <input type="password" id="passPReg" placeholder="Unesi ponovno password" name="passwordRegPonovo" onfocusout="validirajPassove()" required>
         <div class="hidden" id="greskaPassPReg">Passwordi se ne poklapaju.</div> <a>Unesi datum rođenja:  </a>
         <input type="date" id="rodjendanReg" name="rodjendanReg" onfocusout="validirajDatum()">
-        <div class="hidden" id="greskaRodjReg">Datum nije unesen.</div>
+        <div class="hidden" id="greskaRodjReg">Datum nije unesen ili nije u ispravnoj formi.</div>
         <input type="email" id="mailReg" placeholder="Unesi mail" name="mailReg" onfocusout="validirajMail(this.id)" required>
         <div class="hidden" id="greskaMailReg">Mail nije u ispravnoj formi.</div> <a>Odaberi fotografiju</a>
         <input type="file" name="pic" accept="image/*">

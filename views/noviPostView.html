@@ -2,9 +2,10 @@
     <div class="naslov">Novi članak</div>
 </div>
 <div class="red">
-    <input type="text" placeholder="Naslov posta" name="uname" required> </div>
+    <input type="text" id = "naslovPosta" placeholder="Naslov posta" name="uname" onfocusout = "validirajNoviPost()" required> </div>
+    <div class="hidden" id="greskaNaslovPostaPost">Morate unijeti barem naziv posta.</div>
 <div class="red"> <a>Odaberi fotografiju</a>
     <input type="file" name="pic" accept="image/*"> </div>
 <div class="red">
     <input type="text" placeholder="Sadržaj posta" name="uname" required> </div>
-<div class="red"> <a href="index.html">Objavi</a> </div>
+<div class="red"> <button type="button" id="objaviPostButton" onclick="" disabled>Objavi</button> </div>

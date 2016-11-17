@@ -16,6 +16,38 @@ function validirajLogIn() {
         document.getElementById("greskaPass").className = "hidden";
     }
 }
+
+function validirajUnameLogina() {
+    var uname = document.getElementById("unameLogin").value;
+    if (!usernameIsValid(uname) || uname.length == 0) {
+        document.getElementById("greskaUname").className = "prikazGreske fontRoboto";
+    }
+    else {
+        document.getElementById("greskaUname").className = "hidden";
+    }
+    if(!daLiSuNaLogInuSviIspravni()) document.getElementById("loginButton").disabled = true;
+    else document.getElementById("loginButton").disabled = false;
+}
+
+function validirajJedanPass(passCont) {
+    var pass = document.getElementById(passCont).value;
+    if (pass.length < 8 || pass.length == 0) {
+        document.getElementById("greskaPass").className = "prikazGreske fontRoboto";        
+    }
+    else {
+        document.getElementById("greskaPass").className = "hidden";
+    }
+    if(!daLiSuNaLogInuSviIspravni()) document.getElementById("loginButton").disabled = true;
+    else document.getElementById("loginButton").disabled = false;
+}
+
+function daLiSuNaLogInuSviIspravni()
+{
+    if(document.getElementById("greskaUname").className == "prikazGreske fontRoboto") return false;
+    if(document.getElementById("greskaPass").className == "prikazGreske fontRoboto") return false;
+    return true;
+}
+
 /*ValidacijaRegistracije*/
 function validirajRegistraciju() {
     var ime = document.getElementById("imeReg").value;
@@ -69,47 +101,17 @@ function validirajRegistraciju() {
         document.getElementById("greskaRodjReg").className = "hidden";
     }
 }
-var brojNeispravnih = 0; //da znam kad skloniti zabranu sa buttona
+
 function validirajImePrezime(validacija, greska) {
     var ime = document.getElementById(validacija).value;
     if (!usernameIsValid(ime) || ime.length == 0) {
-        document.getElementById(greska).className = "prikazGreske fontRoboto";
-        document.getElementById("regButton").disabled = true;
-        if (document.getElementById(greska).className != "prikazGreske fontRoboto") {
-            brojNeispravnih++;
-        }
+        document.getElementById(greska).className = "prikazGreske fontRoboto";        
     }
     else {
-        document.getElementById(greska).className = "hidden";
-        if (document.getElementById(greska).className != "hidden") {
-            brojNeispravnih--;
-        }
-        if (brojNeispravnih == 0) document.getElementById("regButton").disabled = false;
+        document.getElementById(greska).className = "hidden";        
     }
-}
-/*ValidacijeLogina*/
-function validirajUnameLogina() {
-    var uname = document.getElementById("unameLogin").value;
-    if (!usernameIsValid(uname) || uname.length == 0) {
-        document.getElementById("greskaUname").className = "prikazGreske fontRoboto";
-        document.getElementById("loginButton").disabled = true;
-    }
-    else {
-        document.getElementById("greskaUname").className = "hidden";
-        document.getElementById("loginButton").disabled = false;
-    }
-}
-
-function validirajJedanPass(passCont) {
-    var pass = document.getElementById(passCont).value;
-    if (pass.length < 8 || pass.length == 0) {
-        document.getElementById("greskaPass").className = "prikazGreske fontRoboto";
-        document.getElementById("loginButton").disabled = true;
-    }
-    else {
-        document.getElementById("greskaPass").className = "hidden";
-        document.getElementById("loginButton").disabled = false;
-    }
+    if(!daLiSuSviIspravni()) document.getElementById("regButton").disabled = true;
+     else document.getElementById("regButton").disabled = false;
 }
 
 function validirajPassove() {
@@ -117,69 +119,46 @@ function validirajPassove() {
     var pass2 = document.getElementById("passPReg").value;
     if (pass1.length == 0 || pass1.length < 8) {
         document.getElementById("greskaPassReg").className = "prikazGreske fontRoboto";
-        document.getElementById("regButton").disabled = true;
-        if (document.getElementById("greskaPassReg").className != "prikazGreske fontRoboto") {
-            brojNeispravnih++;
-        }
     }
     else {
         document.getElementById("greskaPassReg").className = "hidden";
-        if (document.getElementById("greskaPassReg").className != "hidden") {
-            brojNeispravnih--;
-        }
-        if (brojNeispravnih <= 0) document.getElementById("regButton").disabled = false;
     }
     if (pass1.length == 0 || pass1 != pass2) {
         document.getElementById("greskaPassPReg").className = "prikazGreske fontRoboto";
-        document.getElementById("regButton").disabled = true;
-        if (document.getElementById("greskaPassPReg").className != "prikazGreske fontRoboto") {
-            brojNeispravnih++;
-        }
     }
     else {
         document.getElementById("greskaPassPReg").className = "hidden";
-        if (document.getElementById("greskaPassPReg").className != "hidden") {
-            brojNeispravnih--;
-        }
-        if (brojNeispravnih <= 0) document.getElementById("regButton").disabled = false;
+        
     }
+    if(!daLiSuSviIspravni()) document.getElementById("regButton").disabled = true;
+     else document.getElementById("regButton").disabled = false;
 }
 
 function validirajDatum() {
     var datRodj = document.getElementById("rodjendanReg").value;
-    if (datRodj.length == 0) {
+    var godina = datRodj.substring(0,4);
+    if (datRodj.length == 0 || new Date().getFullYear() < godina) {
         document.getElementById("greskaRodjReg").className = "prikazGreske fontRoboto";
-        document.getElementById("regButton").disabled = true;
-        if (document.getElementById("greskaRodjReg").className != "prikazGreske fontRoboto") {
-            brojNeispravnih++;
-        }
     }
     else {
         document.getElementById("greskaRodjReg").className = "hidden";
-        if (document.getElementById("greskaRodjReg").className != "hidden") {
-            brojNeispravnih--;
-        }
-        if (brojNeispravnih <= 0) document.getElementById("regButton").disabled = false;
     }
+    if(!daLiSuSviIspravni()) document.getElementById("regButton").disabled = true;
+     else document.getElementById("regButton").disabled = false;
 }
 
 function validirajMail(mail) {
     var isValidMail = document.getElementById(mail).value;
     if (!emailValidation(isValidMail) || isValidMail.length == 0) {
         document.getElementById("greskaMailReg").className = "prikazGreske fontRoboto";
-        document.getElementById("regButton").disabled = true;
-        if (document.getElementById("greskaMailReg").className != "prikazGreske fontRoboto") {
-            brojNeispravnih++;
-        }
     }
     else {
-        document.getElementById("greskaMailReg").className = "hidden";
-        if (document.getElementById("greskaMailReg").className != "hidden") {
-            brojNeispravnih--;
-        }
-        if (brojNeispravnih <= 0) document.getElementById("regButton").disabled = false;
+        document.getElementById("greskaMailReg").className = "hidden";;
     }
+    if(!daLiSuSviIspravni()) document.getElementById("regButton").disabled = true;
+     else document.getElementById("regButton").disabled = false;
 }
+
 /*pomocneFunkcijeValidacija*/
 function usernameIsValid(username) {
     var re = /^\S*$/
@@ -190,7 +169,20 @@ function emailValidation(mailForValid) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(mailForValid);
 }
+
+function daLiSuSviIspravni()
+{
+    if(document.getElementById("greskaImeReg").className == "prikazGreske fontRoboto") return false;
+    if(document.getElementById("greskaPrezimeReg").className == "prikazGreske fontRoboto") return false;
+    if(document.getElementById("greskaUnameReg").className == "prikazGreske fontRoboto") return false;
+    if(document.getElementById("greskaPassReg").className == "prikazGreske fontRoboto") return false;
+    if(document.getElementById("greskaPassPReg").className == "prikazGreske fontRoboto") return false;
+    if(document.getElementById("greskaRodjReg").className == "prikazGreske fontRoboto") return false;
+    if(document.getElementById("greskaMailReg").className == "prikazGreske fontRoboto") return false;
+    return true;
+}
 /*validacijaPostavki*/
+
 function validirajPostavke(validacija, greska) {
     var ime = document.getElementById(validacija).value;
     if (!usernameIsValid(ime) || ime.length == 0) {
@@ -199,6 +191,8 @@ function validirajPostavke(validacija, greska) {
     else {
         document.getElementById(greska).className = "hidden";
     }
+    if(!daLiSuSviNaPostavkamaValidni()) document.getElementById("spremiPostavkeButton").disabled = true;
+    else document.getElementById("spremiPostavkeButton").disabled = false;
 }
 
 function mailPostavki(mail, greska) {
@@ -209,15 +203,43 @@ function mailPostavki(mail, greska) {
     else {
         document.getElementById(greska).className = "hidden";
     }
+    if(!daLiSuSviNaPostavkamaValidni()) document.getElementById("spremiPostavkeButton").disabled = true;
+    else document.getElementById("spremiPostavkeButton").disabled = false;
 }
 
 function datumValidacijaPostavke(datum, greska) {
     var datRodj = document.getElementById(datum).value;
-    if (datRodj.length == 0) {
+    var godina = datRodj.substring(0,4);
+    if (datRodj.length == 0 || new Date().getFullYear() < godina) {
         document.getElementById(greska).className = "prikazGreske fontRoboto";
     }
     else {
         document.getElementById(greska).className = "hidden";
+    }
+    if(!daLiSuSviNaPostavkamaValidni()) document.getElementById("spremiPostavkeButton").disabled = true;
+    else document.getElementById("spremiPostavkeButton").disabled = false;
+}
+
+function daLiSuSviNaPostavkamaValidni()
+{
+    if(document.getElementById("greskaImePost").className == "prikazGreske fontRoboto") return false;
+    if(document.getElementById("greskaPrezimePost").className == "prikazGreske fontRoboto") return false;
+    if(document.getElementById("greskaMailPost").className == "prikazGreske fontRoboto") return false;
+    if(document.getElementById("greskaRodjPost").className == "prikazGreske fontRoboto") return false;
+    if(document.getElementById("greskaUnamePost").className == "prikazGreske fontRoboto") return false;
+    return true;
+}
+/*Validacija Novog Posta*/
+function validirajNoviPost()
+{
+    var naslov = document.getElementById("naslovPosta").value;
+    if (naslov <= 0) {
+        document.getElementById("greskaNaslovPostaPost").className = "prikazGreske fontRoboto";
+        document.getElementById("objaviPostButton").disabled = true;
+    }
+    else {
+        document.getElementById("greskaNaslovPostaPost").className = "hidden";
+        document.getElementById("objaviPostButton").disabled = false;
     }
 }
 /*Galerija*/
@@ -257,7 +279,8 @@ window.onclick = function (event) {
             }
         }
     }
-    /*AjaxLoadStranica*/
+
+/*AjaxLoadStranica*/
 window.onload = loadStranica('views/pocetnaView.html');
 
 function loadStranica(stranicaZaLoad) {
