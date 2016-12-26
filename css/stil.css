@@ -115,7 +115,7 @@ body {
     text-align: center;
     font-family: Roboto;
     font-weight: lighter;
-    background-image: url('http://1030news.com/wp-content/themes/fearless/images/missing-image-640x360.png');
+    background-image: url('../img/noImage.jpg');
     width: 350px;
     height: 140px;
     background-position: center;
@@ -132,7 +132,7 @@ body {
     text-align: center;
     font-family: Roboto;
     font-weight: lighter;
-    background-image: url('http://1030news.com/wp-content/themes/fearless/images/missing-image-640x360.png');
+    background-image: url('../img/noImage.jpg');
     width: 180px;
     height: 100px;
     background-position: center;
@@ -154,7 +154,7 @@ body {
 .clanak.skracen.detaljno {
     text-align: right;
     font-family: Roboto;
-    font-weight: lighter;
+    font-weight: normal;
     font-size: 12px;
     color: #1e88e5;
     overflow: hidden;
@@ -226,6 +226,7 @@ subLinks {
         font-weight: lighter;
         font-size: 15px;
     }
+    
 }
 
 @media screen and (max-width: 800px) {
@@ -234,6 +235,10 @@ subLinks {
     }
     .prikazi {
         display: block;
+    }
+    .sakrij.dugme
+    {
+        display: none;
     }
 }
 
@@ -247,6 +252,11 @@ subLinks {
     .prikazi {
         display: block;
     }
+    
+    .sakrij.dugme
+    {
+        display: none;
+    }
 }
 
 
@@ -258,7 +268,7 @@ subLinks {
 
 input[type=text],
 input[type=password],
-input[type=email] {
+input[type=email]{
     width: 100%;
     padding: 12px 20px;
     margin: 8px auto;
@@ -328,7 +338,7 @@ input[type=textPosta] {
     text-align: center;
     font-family: Roboto;
     font-weight: lighter;
-    background-image: url('http://1030news.com/wp-content/themes/fearless/images/missing-image-640x360.png');
+    background-image: url('../img/noImage.jpg');
     width: 200px;
     height: 200px;
     background-position: center;
@@ -387,14 +397,14 @@ input[type=textPosta] {
     text-align: center;
     font-family: Roboto;
     font-weight: lighter;
-    background-image: url('http://1030news.com/wp-content/themes/fearless/images/missing-image-640x360.png');
+    background-image: url('../img/noImage.jpg');
     width: 600px;
     height: 300px;
     background-position: center;
     /*  Make the background image cover the area of the <div>, and clip the excess */
     background-size: cover;
 }
-
+    
 .naslovClanak {
     text-align: center;
     font-family: Roboto;
@@ -408,7 +418,7 @@ input[type=textPosta] {
     margin-top: 15px;
     text-align: justify;
     font-family: Roboto;
-    font-weight: lighter;
+    font-weight: normal;
     width: 600px;
     background-position: center;
     overflow: hidden;
@@ -529,3 +539,66 @@ input[type=textPosta] {
 {
     
 }
+
+
+/*textareastil*/
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+
+/*Opcije clanak*/
+.clanakOpcije {
+    text-align: center;
+    font-family: Roboto;
+    font-size: 20px;
+    margin: auto 0;
+    background-color: #1d6dc7;
+}
+
+/*CUSTOM BUTTON*/
+.dugmeVeliko {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 6px auto;
+    cursor: pointer;
+    float: right;
+}
+.dugmeMalo
+{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 2px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 6px auto;
+    cursor: pointer;
+    float: right;
+    
+}
+.tekstPretrage{
+    width: 85%;
+    padding: 12px 20px;
+    margin: 8px auto;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-family: Roboto;
+    font-weight: lighter;
+}
+
+
