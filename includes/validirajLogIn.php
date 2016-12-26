@@ -15,7 +15,7 @@ session_start();
         session_destroy();
     }
     
-    $podaciAdmina = simplexml_load_file('../XMLs/adminKorisnici.xml');
+    $podaciAdmina = simplexml_load_file($_SERVER['DOCUMENT_ROOT'] . '/XMLs/adminKorisnici.xml');
     if($_POST["uname"] == $podaciAdmina->username && md5($_POST["psw"]) == $podaciAdmina->password)
     {
         echo("<script>alert('Password i username se ne podudaraju.');</script>");

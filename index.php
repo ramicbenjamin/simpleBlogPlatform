@@ -6,10 +6,10 @@ include 'includes/header.php';
 </div>
 
 <?php
-    $sve = file_get_contents('XMLs/clanci.xml');
+    $sve = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/XMLs/clanci.xml');
     if(strlen($sve) != 0)
     {
-        $sviClanci = simplexml_load_file('XMLs/clanci.xml');
+        $sviClanci = simplexml_load_file($_SERVER['DOCUMENT_ROOT'] . '/XMLs/clanci.xml');
         $i = 0;
         foreach ($sviClanci as $x)
         {

@@ -1,7 +1,7 @@
 <?php
 include 'includes/header.php';
 $idClanka = $_GET["id"];
-    $sadrzajXMLa = simplexml_load_file('XMLs/clanci.xml'); 
+    $sadrzajXMLa = simplexml_load_file($_SERVER['DOCUMENT_ROOT'] . '/XMLs/clanci.xml'); 
     foreach($sadrzajXMLa->objava as $uni)
     {
         if($uni->id == $idClanka) {

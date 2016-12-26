@@ -1,6 +1,6 @@
 <?php
 $xmlDoc=new DOMDocument();
-$xmlDoc->load("../XMLs/clanci.xml");
+$xmlDoc->load($_SERVER['DOCUMENT_ROOT'] . "/XMLs/clanci.xml");
 
 $x=$xmlDoc->getElementsByTagName('objava');
 

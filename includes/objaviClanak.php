@@ -1,14 +1,14 @@
 <?php
 if(isset($_POST['naslovClanka']) && strlen(trim($_POST['naslovClanka'])) != 0) {
-        $sve = file_get_contents('../XMLs/clanci.xml');
+        $sve = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/XMLs/clanci.xml');
         if($sve[strlen($sve)-2] == '>') $sve = substr($sve,0,strlen($sve)-1);
         if(strlen($sve)==0)
         {
             $sve ="<?xml version='1.0' encoding='utf-8'?><clanci></clanci>";
-            file_put_contents('../XMLs/clanci.xml', $sve);
+            file_put_contents($_SERVER['DOCUMENT_ROOT'] . '/XMLs/clanci.xml', $sve);
         }
         $brojPostova = 1;
-        $sadrzajXMLa = simplexml_load_file('../XMLs/clanci.xml');
+        $sadrzajXMLa = simplexml_load_file($_SERVER['DOCUMENT_ROOT'] . '/XMLs/clanci.xml');
         foreach($sadrzajXMLa as $x)
         {
             $brojPostova = $x->id+1;
@@ -17,7 +17,7 @@ if(isset($_POST['naslovClanka']) && strlen(trim($_POST['naslovClanka'])) != 0) {
     
         /*img upload*/
     
-        $target_dir = "../uploads/";
+        $target_dir = $_SERVER['DOCUMENT_ROOT'] . "/uploads/";
         $target_ime_slike = "slika".$brojPostova.".jpg";
         $target_file = $target_dir . $target_ime_slike;
         $uploadOk = 1;
@@ -68,7 +68,7 @@ if(isset($_POST['naslovClanka']) && strlen(trim($_POST['naslovClanka'])) != 0) {
     
         $novaObjava = "<objava><id>".$brojPostova."</id><naslov>" . htmlspecialchars($_POST['naslovClanka']) . "</naslov><slika>".$target_file."</slika><sadrzaj>" . htmlspecialchars($_POST['sadrzajClanka']) . "</sadrzaj><autor>".htmlspecialchars($_POST['autorClanka'])."</autor></objava>";
         $sve = substr($sve,0,strlen($sve)-9).$novaObjava."</clanci> ";
-        file_put_contents('../XMLs/clanci.xml', $sve);
+        file_put_contents($_SERVER['DOCUMENT_ROOT'] . '/XMLs/clanci.xml', $sve);
        header("Location: ../index.php");
     }
 header("Location: ../index.php");

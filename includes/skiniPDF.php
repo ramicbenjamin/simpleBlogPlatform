@@ -1,7 +1,7 @@
 <?php
 
 $clanakZaSkinuti = $_GET["id"];
-$sadrzajXMLa = simplexml_load_file('../XMLs/clanci.xml'); 
+$sadrzajXMLa = simplexml_load_file($_SERVER['DOCUMENT_ROOT'] . '/XMLs/clanci.xml'); 
     foreach($sadrzajXMLa->objava as $uni)
     {
         if($uni->id == $clanakZaSkinuti) {
@@ -19,7 +19,7 @@ function Header()
 {
     
     $clanakZaSkinuti = $_GET["id"];
-    $sadrzajXMLa = simplexml_load_file('../XMLs/clanci.xml'); 
+    $sadrzajXMLa = simplexml_load_file($_SERVER['DOCUMENT_ROOT'] . '/XMLs/clanci.xml'); 
     foreach($sadrzajXMLa->objava as $uni)
     {
         if($uni->id == $clanakZaSkinuti) {
@@ -40,7 +40,7 @@ function Header()
 function Footer()
 {
     $clanakZaSkinuti = $_GET["id"];
-    $sadrzajXMLa = simplexml_load_file('../XMLs/clanci.xml'); 
+    $sadrzajXMLa = simplexml_load_file($_SERVER['DOCUMENT_ROOT'] . '/XMLs/clanci.xml'); 
     foreach($sadrzajXMLa->objava as $uni)
     {
         if($uni->id == $clanakZaSkinuti) {
@@ -82,7 +82,7 @@ $pdf = new PDF();
 $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Times','',12);
-$targetImage = "../uploads/slika".$_GET['id'].".jpg";
+$targetImage = $_SERVER['DOCUMENT_ROOT'] . "/uploads/slika".$_GET['id'].".jpg";
 if(file_exists($targetImage))
 {
     try{
@@ -90,12 +90,12 @@ if(file_exists($targetImage))
     }
     catch(exception $e)
     {
-        $noImage = "../img/noImage.jpg";
+        $noImage = $_SERVER['DOCUMENT_ROOT'] . "/img/noImage.jpg";
         $pdf->Image($noImage,50,35,100);
     }
 }else
 {
-    $noImage = "../img/noImage.jpg";
+    $noImage = $_SERVER['DOCUMENT_ROOT'] . "/img/noImage.jpg";
     $pdf->Image($noImage,50,35,100);
 }
 if(isset($sadrzajSkin)) $pdf->PrintChapter($sadrzajSkin);
