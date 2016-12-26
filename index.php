@@ -7,6 +7,8 @@ include 'includes/header.php';
 
 <?php
     $sve = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/XMLs/clanci.xml');
+    var_dump($sve);
+    var_dump($_SERVER['DOCUMENT_ROOT']);
     if(strlen($sve) != 0)
     {
         $sviClanci = simplexml_load_file($_SERVER['DOCUMENT_ROOT'] . '/XMLs/clanci.xml');
