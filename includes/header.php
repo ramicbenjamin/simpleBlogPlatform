@@ -13,7 +13,7 @@
     <body>
         <div class="container">
             <div class="red">
-                <div class="kolona dva logo"> <img src="../simpleBlogPlatformPSDS/logo_simpleBlogPlatform.png" alt="logo" width="50" height="50"> </div>
+                <div class="kolona dva logo"> <a href="index.php"><img src="../simpleBlogPlatformPSDS/logo_simpleBlogPlatform.png" alt="logo" width="50" height="50"> </a></div>
                 <div class="kolona dva meni sakrij meni">
                     <?php if(isset($_SESSION["admin"])) { ?> <a href="index.php">Početna</a> | <a href="profil.php">Profil</a> | <a href="noviPost.php">Novi post</a> | <a href="notifikacije.php">Notifikacije</a> | <a href = "pretraga.php"> Pretraga </a> |
                         <?php } ?>

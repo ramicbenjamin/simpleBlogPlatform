@@ -68,3 +68,32 @@ Lista fajlova:
     - pocetnaView.html (stranica na kojoj su izlistani svi članci)
 - js folder -> skripta.js (skripta u kojoj su opisane sve JS funkcionalnosti ove web stranice)
 - index.html (Početna stranica, u koju se loadaj svi view-si)
+
+# Zadaća_3 last commit.
+
+Urađeno je:
+- Serijalizacija svih podataka u XML (upisivanje u XML)
+- Izmjena podataka u XML 
+- Brisanje podataka iz XML
+- Prikazivanje podataka iz XML
+- Svi podaci su validirani i kroz PHP, ne samo kroz JS
+- XSS je spriječen na svim poljima
+- Admin korisnik može da radi sve manipulacije nad podacima (Username: admin; Password: 12345678) Login ide preko upitnik buttona
+- Admin može downloadati sve podatke iz XML-a u CSV formatu, na dnu početne stranice ispod svih članaka stoji link na download
+- Admin može downloadati PDF svakog pojedinačnog članka, to se nalazi kada Admin otvori članak, pa ispod teksta i slike članka, zajedno sa menijem za izmjenu i brisanje članka
+- Pretraživanje iz XML-a u dva polja ide kroz pretraživanje naslov polja i imeAutora polja, prikazuju se suggestions, a može se dobiti i kompletan spisak pretraživanih fajlova kada se pritisne na dugme pretraga
+- Deployano je na OpenShift (http://phpwt-simpleblogplatform.44fs.preview.openshiftapps.com/)
+U testiranju nije primjećen nijedan bug.
+
+Lista fajlova:
+
+- css folder -> stil.css (Svi stilovi za web stranicu)
+- CSVs -> folder u kojem se kreira CSV fajl za download
+- font -> fontovi za fpdf biblioteku
+- includes -> svi .php fajlovi koji rade sve gore navedene funkcionalnosti, a koji se includeaju u ostale .php fajlove
+- uploads -> slike koje se uploadaju sa člankom
+- XMLs -> folder sa XMLovima, za članke i za korisničke podatke
+- img folder (nalaze se slike poztrebne za stranicu)
+- simpleBlogPlatformPSDS (Nalaze se sve skice za stranicu, kao i PSD fajlovi istih)
+- js folder -> skripta.js (skripta u kojoj su opisane sve JS funkcionalnosti ove web stranice)
+- Svi ostali .php fajlovi su fajlovi koji se pokreću na stranici i nema potrebe da se objašnjavaju pojedinačno, jer su prilično intuitivni
