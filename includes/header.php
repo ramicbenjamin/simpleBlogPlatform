@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+﻿<?php session_start(); ?>
     <!DOCTYPE html>
     <html lang="">
 
@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="red prikazi">
-                <?php if(isset($_SESSION["admin"])) { ?><a href="pocetna.php">Početna</a> | <a href="profil.php">Profil</a> | <a href="noviPost.php">Novi post</a>  | <a href="notifikacije.php">Notifikacije</a> | <a href = "pretraga.php"> Pretraga </a> |
+                <?php if(isset($_SESSION["admin"])) { ?><a href="index.php">Početna</a> | <a href="profil.php">Profil</a> | <a href="noviPost.php">Novi post</a>  | <a href="notifikacije.php">Notifikacije</a> | <a href = "pretraga.php"> Pretraga </a> |
                     <?php } ?>
                         <div class="dropdown">
                             <button onclick="dropajMeni('dropDownMali')" class="dropbtn">?</button>
