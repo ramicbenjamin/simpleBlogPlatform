@@ -10,7 +10,7 @@ include 'includes/header.php';
     }*/
 
      $idClanka = $_GET["id"];    
-     $veza = new PDO("mysql:dbname=simpleBlogPlatformDB;host=localhost;charset=utf8", "admin", "12345678");
+     $veza = new PDO('mysql:host=' . getenv('MYSQL_SERVICE_HOST') . ';port=3306;dbname=simpleblogplatformdb', 'bramic2', 'oephaecoonee');
      $veza->exec("set names utf8");
      $sviClanci = $veza->query("select id, naslov, tekst, autor from clanak where id = ". $idClanka);
      if (!$sviClanci) {

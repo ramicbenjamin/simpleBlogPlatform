@@ -3,9 +3,10 @@
 
 
 //database configuration
-$config['mysql_host'] = "localhost";
-$config['mysql_user'] = "admin";
-$config['mysql_pass'] = "12345678";
+
+$config['mysql_host'] = getenv('MYSQL_SERVICE_HOST');
+$config['mysql_user'] = "bramic2";
+$config['mysql_pass'] = "oephaecoonee";
 $config['db_name']    = "simpleblogplatformdb";
 $config['table_name'] = "clanak";
  

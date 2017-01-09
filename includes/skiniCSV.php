@@ -13,10 +13,9 @@ fclose($f);
 }
 header('Content-Disposition: attachment; filename="' . $_SERVER['DOCUMENT_ROOT'] . '/CSVs/clanci.csv";');
 readfile($_SERVER['DOCUMENT_ROOT'] . '/CSVs/clanci.csv'); */
-
-$host = "localhost";
-$username = "admin";
-$password = "12345678";
+$host = getenv('MYSQL_SERVICE_HOST');
+$username = "bramic2";
+$password = "oephaecoonee";
 $dbname = "simpleblogplatformdb";
 
 // open connection to mysql database

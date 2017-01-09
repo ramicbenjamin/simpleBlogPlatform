@@ -24,7 +24,7 @@ switch($method) {
         zag(); $data = $_POST; rest_post($request, $data); break;
     case 'GET':
         $idvijesti = $_GET['id'];
-        $veza = new PDO('mysql:host=localhost;dbname=simpleblogplatformdb;charset=utf8', 'admin', '12345678');
+        $veza = new PDO('mysql:host=' . getenv('MYSQL_SERVICE_HOST') . ';port=3306;dbname=simpleblogplatformdb', 'bramic2', 'oephaecoonee');
         $veza->exec("set names utf8");
         $upit = $veza->prepare("SELECT * FROM komentar WHERE clanak_id=?");
         $upit->bindValue(1, $idvijesti, PDO::PARAM_INT);
