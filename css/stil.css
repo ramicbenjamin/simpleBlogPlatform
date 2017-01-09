@@ -602,3 +602,39 @@ textarea {
 }
 
 
+/*KOMENTARI*/
+
+.placeHolderKomentara {
+    width: 90%;
+    margin: auto;
+    margin-top: 15px;
+    text-align: justify;
+    font-family: Roboto;
+    font-weight: normal;
+    width: 600px;
+    background-position: center;
+    overflow: hidden;
+    border-left: 6px solid #4dcfff;
+    background-color: lightgrey;
+    border-radius: 5px;
+}
+
+.komentariSeparator {
+    text-align: center;
+    font-family: Roboto;
+    font-weight: lighter;
+    font-size: 20px;
+    background-color: #6ba8ed;
+    margin: auto 0;
+}
+
+.tekstKomentara{
+    width: 85%;
+    padding: 12px 20px;
+    margin: 8px auto;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-family: Roboto;
+    font-weight: lighter;
+}

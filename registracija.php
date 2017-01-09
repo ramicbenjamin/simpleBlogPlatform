@@ -4,7 +4,7 @@ include 'includes/header.php';
    <div class="red">
     <div class="naslov">Registracija</div>
 </div>
-<form class="formaLogIn">
+<form class="formaLogIn" method="post" action="includes/registrujKorisnikaDB.php">
     <div class="containerRegistracija">
         <input type="text" id="imeReg" placeholder="Unesi ime" name="imeReg" onfocusout="validirajImePrezime('imeReg','greskaImeReg')" required>
         <div class="hidden" id="greskaImeReg">Morate unijeti ime.</div>
@@ -24,7 +24,7 @@ include 'includes/header.php';
         <br>
         <br>
         <br>
-        <button type="button" id="regButton" onclick="validirajRegistraciju()" disabled>Registriraj</button>
+        <input type="submit">
     </div>
 </form>
 <?php

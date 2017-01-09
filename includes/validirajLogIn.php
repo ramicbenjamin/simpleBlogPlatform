@@ -1,6 +1,7 @@
 
 <?php 
 session_start();
+
     if(!isset($_POST["uname"]) || !isset($_POST["psw"]))
     {
         echo("<script>alert('Polja nisu unesena.')</script>");
@@ -15,7 +16,7 @@ session_start();
         session_destroy();
     }
     
-    $podaciAdmina = simplexml_load_file($_SERVER['DOCUMENT_ROOT'] . '/XMLs/adminKorisnici.xml');
+    /*$podaciAdmina = simplexml_load_file($_SERVER['DOCUMENT_ROOT'] . '/XMLs/adminKorisnici.xml');
     if($_POST["uname"] == $podaciAdmina->username && md5($_POST["psw"]) == $podaciAdmina->password)
     {
         echo("<script>alert('Password i username se ne podudaraju.');</script>");
@@ -27,8 +28,22 @@ session_start();
         session_destroy();
         header("Location: ../index.php"); 
         echo("<script>alert('Password i username se ne podudaraju.')</script>");
-    }
+    }*/
 
+     $veza = new PDO("mysql:dbname=simpleBlogPlatformDB;host=localhost;charset=utf8", "admin", "12345678");
+     $veza->exec("set names utf8");
+     $unamePriprema = $_POST["uname"];
+     $passwordPriprema = md5($_POST["psw"]);
+     $upit = $veza->prepare("SELECT * FROM korisnik WHERE username=? and password=?");
+     $upit->execute(array($unamePriprema, $passwordPriprema));
+     $_SESSION["username"] = $upit->fetch()["username"];
+     if(isset($_SESSION["username"]))
+     {
+         header("Location: ../index.php"); 
+     }else{
+        session_destroy();
+        header("Location: ../index.php"); 
+     }
 
 function usernameIsValid ($username) 
 {

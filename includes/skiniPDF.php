@@ -1,6 +1,6 @@
 <?php
 
-$clanakZaSkinuti = $_GET["id"];
+/*$clanakZaSkinuti = $_GET["id"];
 $sadrzajXMLa = simplexml_load_file($_SERVER['DOCUMENT_ROOT'] . '/XMLs/clanci.xml'); 
     foreach($sadrzajXMLa->objava as $uni)
     {
@@ -8,7 +8,23 @@ $sadrzajXMLa = simplexml_load_file($_SERVER['DOCUMENT_ROOT'] . '/XMLs/clanci.xml
             $sadrzajSkin = $uni->sadrzaj;
         }
     }
+*/
 
+
+ $idClanka = $_GET["id"];    
+ $veza = new PDO("mysql:dbname=simpleBlogPlatformDB;host=localhost;charset=utf8", "admin", "12345678");
+ $veza->exec("set names utf8");
+ $sviClanci = $veza->query("select id, naslov, tekst, autor from clanak where id = ". $idClanka);
+ if (!$sviClanci) {
+      $greska = $veza->errorInfo();
+      print "SQL greška: " . $greska[2];
+      exit();
+ }
+
+
+ foreach ($sviClanci as $vijest) {
+     $clanakIspis = $vijest;
+ }
 
 require('../fpdf.php');
 
@@ -18,20 +34,37 @@ class PDF extends FPDF
 function Header()
 {
     
-    $clanakZaSkinuti = $_GET["id"];
+   /* $clanakZaSkinuti = $_GET["id"];
     $sadrzajXMLa = simplexml_load_file($_SERVER['DOCUMENT_ROOT'] . '/XMLs/clanci.xml'); 
     foreach($sadrzajXMLa->objava as $uni)
     {
         if($uni->id == $clanakZaSkinuti) {
             $naslovSkin = $uni->naslov;
         }
-    }
+    }*/
+    
+     $idClanka = $_GET["id"];    
+     $veza = new PDO("mysql:dbname=simpleBlogPlatformDB;host=localhost;charset=utf8", "admin", "12345678");
+     $veza->exec("set names utf8");
+     $sviClanci = $veza->query("select id, naslov, tekst, autor from clanak where id = ". $idClanka);
+     if (!$sviClanci) {
+          $greska = $veza->errorInfo();
+          print "SQL greška: " . $greska[2];
+          exit();
+     }
+
+
+     foreach ($sviClanci as $vijest) {
+         $clanakIspis = $vijest;
+     }
+    
+    
     // Arial bold 15
     $this->SetFont('Arial','B',15);
     // Move to the right
     $this->Cell(80);
     // Title
-    if(isset($naslovSkin)) $this->Cell(30,10, $naslovSkin ,0,1,'C');
+    if(isset($clanakIspis["naslov"])) $this->Cell(30,10, $clanakIspis["naslov"] ,0,1,'C');
     // Line break
     $this->Ln(20);
 }
@@ -39,20 +72,42 @@ function Header()
 // Page footer
 function Footer()
 {
-    $clanakZaSkinuti = $_GET["id"];
+    /*$clanakZaSkinuti = $_GET["id"];
     $sadrzajXMLa = simplexml_load_file($_SERVER['DOCUMENT_ROOT'] . '/XMLs/clanci.xml'); 
     foreach($sadrzajXMLa->objava as $uni)
     {
         if($uni->id == $clanakZaSkinuti) {
             $autorSkin = $uni->autor;
         }
-    }
+    }*/
+    
+    
+    $idClanka = $_GET["id"];    
+     $veza = new PDO("mysql:dbname=simpleBlogPlatformDB;host=localhost;charset=utf8", "admin", "12345678");
+     $veza->exec("set names utf8");
+     $sviClanci = $veza->query("select id, naslov, tekst, autor from clanak where id = ". $idClanka);
+     if (!$sviClanci) {
+          $greska = $veza->errorInfo();
+          print "SQL greška: " . $greska[2];
+          exit();
+     }
+
+
+     foreach ($sviClanci as $vijest) {
+         $clanakIspis = $vijest;
+     }
+    
     // Position at 1.5 cm from bottom
     $this->SetY(-15);
     // Arial italic 8
     $this->SetFont('Arial','I',8);
     // Page number
-    if(isset($autorSkin)) $this->Cell(0,10,"Autor: ".$autorSkin,0,0,'C');
+    $autorClankaID = $veza->query("select username from korisnik where id = ".$clanakIspis["autor"]);
+        foreach($autorClankaID as $z)
+        {
+            $autorClanka = $z["username"]; 
+        }
+    if(isset($autorClanka)) $this->Cell(0,10,"Autor: ".$autorClanka,0,0,'C');
 }
     
     
@@ -98,7 +153,7 @@ if(file_exists($targetImage))
     $noImage = $_SERVER['DOCUMENT_ROOT'] . "/img/noImage.jpg";
     $pdf->Image($noImage,50,35,100);
 }
-if(isset($sadrzajSkin)) $pdf->PrintChapter($sadrzajSkin);
+if(isset($clanakIspis["tekst"])) $pdf->PrintChapter($clanakIspis["tekst"]);
 else header("Location: ../index.php");
 $pdf->Output();
 ?>
