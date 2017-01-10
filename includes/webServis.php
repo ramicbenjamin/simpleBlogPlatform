@@ -29,10 +29,22 @@ function rest_get($request, $data)
         print "]}";
     
 }
-function rest_post($request, $data) { }
-function rest_delete($request) { }
-function rest_put($request, $data) { }
-function rest_error($request) { }
+function rest_post($request, $data) 
+{
+    print "Servis za POST nije implementiran.";
+}
+function rest_delete($request) 
+{
+    print "Servis za DELETE nije implementiran.";
+}
+function rest_put($request, $data) 
+{ 
+    print "Servis za PUT nije implementiran.";
+}
+function rest_error($request) 
+{ 
+    print "Servis za ERROR nije implementiran.";
+}
 
 $method  = $_SERVER['REQUEST_METHOD'];
 $request = $_SERVER['REQUEST_URI'];
