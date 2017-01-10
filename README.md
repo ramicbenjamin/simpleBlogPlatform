@@ -102,8 +102,8 @@ Lista fajlova:
 # Zadaća_4 last commit.
 Urađeno je:
 - Napravljena je MySQL baza podataka sa tri povezane tabele. Baza podataka se zove simpleblogplatformdb. Tabele unutar baze su: clanak, komentar, korisnik. ERD i backup baze se nalaze unutar projekta.
-- Dodata je registracija novih korisnika, tako da je sada moguće napraviti registraciju, sa jedinstvenim username-om.
-- Dodata mogućnost komentarisanja svakog posta, od strane svakoga. (Nema nikakve provjere ko je i kad komentarisao koji post, i svi mogu da komentiraju, uključujući i neregistrovane korisnike. Znam da je ovo loš pristup, al' je ovo samo proof of concept).
+- Dodana je registracija novih korisnika, tako da je sada moguće napraviti registraciju, sa jedinstvenim username-om. (Postojeci acc: username: ben, password: 12345678)
+- Dodana mogućnost komentarisanja svakog posta, od strane svakoga. (Nema nikakve provjere ko je i kad komentarisao koji post, i svi mogu da komentiraju, uključujući i neregistrovane korisnike. Znam da je ovo loš pristup, al' je ovo samo proof of concept).
 - Napravljena skripta koja iz XML-a prebaci u bezu sve podatke koji se već ne nalaze u bazi. Link za to je omogućen samo administratorima (logovanim korisnicima), i nalazi se u meniju na klik XMLtoDB.
 - Svi podaci se sada čuvaju, i kupe iz baze podataka umjesto iz XML-a sa prošle zadaće.
 - Stranica i baza podataka su deplpyane na openshift na ovaj link: http://phpwt-simpleblogplatform.44fs.preview.openshiftapps.com/index.php
