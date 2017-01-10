@@ -99,7 +99,7 @@ Lista fajlova:
 - Svi ostali .php fajlovi su fajlovi koji se pokreću na stranici i nema potrebe da se objašnjavaju pojedinačno, jer su prilično intuitivni
 
 
-# Zadaća_3 last commit.
+# Zadaća_4 last commit.
 Urađeno je:
 - Napravljena je MySQL baza podataka sa tri povezane tabele. Baza podataka se zove simpleblogplatformdb. Tabele unutar baze su: clanak, komentar, korisnik. ERD i backup baze se nalaze unutar projekta.
 - Dodata je registracija novih korisnika, tako da je sada moguće napraviti registraciju, sa jedinstvenim username-om.
