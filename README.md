@@ -97,3 +97,27 @@ Lista fajlova:
 - simpleBlogPlatformPSDS (Nalaze se sve skice za stranicu, kao i PSD fajlovi istih)
 - js folder -> skripta.js (skripta u kojoj su opisane sve JS funkcionalnosti ove web stranice)
 - Svi ostali .php fajlovi su fajlovi koji se pokreću na stranici i nema potrebe da se objašnjavaju pojedinačno, jer su prilično intuitivni
+
+
+# Zadaća_3 last commit.
+Urađeno je:
+- Napravljena je MySQL baza podataka sa tri povezane tabele. Baza podataka se zove simpleblogplatformdb. Tabele unutar baze su: clanak, komentar, korisnik. ERD i backup baze se nalaze unutar projekta.
+- Dodata je registracija novih korisnika, tako da je sada moguće napraviti registraciju, sa jedinstvenim username-om.
+- Dodata mogućnost komentarisanja svakog posta, od strane svakoga. (Nema nikakve provjere ko je i kad komentarisao koji post, i svi mogu da komentiraju, uključujući i neregistrovane korisnike. Znam da je ovo loš pristup, al' je ovo samo proof of concept).
+- Napravljena skripta koja iz XML-a prebaci u bezu sve podatke koji se već ne nalaze u bazi. Link za to je omogućen samo administratorima (logovanim korisnicima), i nalazi se u meniju na klik XMLtoDB.
+- Svi podaci se sada čuvaju, i kupe iz baze podataka umjesto iz XML-a sa prošle zadaće.
+- Stranica i baza podataka su deplpyane na openshift na ovaj link: http://phpwt-simpleblogplatform.44fs.preview.openshiftapps.com/index.php
+- Napravljena jedna REST metoda web servisa koja vraća sve komentare na članak sa zadatim ID-om formatirana u JSON objekat. Da bi se testirao web servis možete pristupiti linku: http://phpwt-simpleblogplatform.44fs.preview.openshiftapps.com/includes/webServis.php?id=86; 
+ID se može mijenjati, on predstavlja ID članka koji je objavljen.
+- Web servis je testiran pomoću POSTMAN-a i screenshotovi su priloženi u folderu POSTMANScreenshoots
+U testiranju nije primjećen nijedan bug.
+
+Lista fajlova:
+
+Svi fajlovi su kao i u prošloj zadaći, i sadrže iste stvari kao i u prethodnoj zadaći, osim što su kreirane gore navedene skripte koje rade sa bazom podataka i one se nalaze u includes folderu. Sve skripte koje rade sa bazom podataka imaju na kraju imena DB, tako da su lahko prepoznatljive. Ostale su i skripte koje rade sa XML-ovima, ali one se trenutno na stranici ne koriste ni za šta.
+
+Od novih fajlova tu su:
+
+-  databaseBackup&ERD (Backup baze i njen dijagram)
+-  pma (phpmyadmin za deploy na openshift)
+-  POSTMANScreenshots (Screenshotovi POSTMAN analize web servisa)
