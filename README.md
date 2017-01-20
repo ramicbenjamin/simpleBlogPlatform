@@ -82,7 +82,7 @@ Urađeno je:
 - Admin može downloadati sve podatke iz XML-a u CSV formatu, na dnu početne stranice ispod svih članaka stoji link na download
 - Admin može downloadati PDF svakog pojedinačnog članka, to se nalazi kada Admin otvori članak, pa ispod teksta i slike članka, zajedno sa menijem za izmjenu i brisanje članka
 - Pretraživanje iz XML-a u dva polja ide kroz pretraživanje naslov polja i imeAutora polja, prikazuju se suggestions, a može se dobiti i kompletan spisak pretraživanih fajlova kada se pritisne na dugme pretraga
-- Deployano je na OpenShift (http://phpwt-simpleblogplatform.44fs.preview.openshiftapps.com/)
+- Deployano je na OpenShift (http://wtphp-jednostavnablogplatforma.44fs.preview.openshiftapps.com/)
 U testiranju nije primjećen nijedan bug.
 
 Lista fajlova:
@@ -106,8 +106,8 @@ Urađeno je:
 - Dodana mogućnost komentarisanja svakog posta, od strane svakoga. (Nema nikakve provjere ko je i kad komentarisao koji post, i svi mogu da komentiraju, uključujući i neregistrovane korisnike. Znam da je ovo loš pristup, al' je ovo samo proof of concept).
 - Napravljena skripta koja iz XML-a prebaci u bezu sve podatke koji se već ne nalaze u bazi. Link za to je omogućen samo administratorima (logovanim korisnicima), i nalazi se u meniju na klik XMLtoDB.
 - Svi podaci se sada čuvaju, i kupe iz baze podataka umjesto iz XML-a sa prošle zadaće.
-- Stranica i baza podataka su deplpyane na openshift na ovaj link: http://phpwt-simpleblogplatform.44fs.preview.openshiftapps.com/index.php
-- Napravljena jedna REST metoda web servisa koja vraća sve komentare na članak sa zadatim ID-om formatirana u JSON objekat. Da bi se testirao web servis možete pristupiti linku: http://phpwt-simpleblogplatform.44fs.preview.openshiftapps.com/includes/webServis.php?id=86; 
+- Stranica i baza podataka su deplpyane na openshift na ovaj link: http://wtphp-jednostavnablogplatforma.44fs.preview.openshiftapps.com/
+- Napravljena jedna REST metoda web servisa koja vraća sve komentare na članak sa zadatim ID-om formatirana u JSON objekat. Da bi se testirao web servis možete pristupiti linku: http://wtphp-jednostavnablogplatforma.44fs.preview.openshiftapps.com/includes/webServis.php?id=86; 
 ID se može mijenjati, on predstavlja ID članka koji je objavljen.
 - Web servis je testiran pomoću POSTMAN-a i screenshotovi su priloženi u folderu POSTMANScreenshoots
 U testiranju nije primjećen nijedan bug.
